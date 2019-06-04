@@ -7,7 +7,7 @@ const Contact = ({id, name, phone,remove, }) =>(
             <Table.Cell>{name}</Table.Cell>
             <Table.Cell textAlign='center'>{phone}</Table.Cell>
             <Table.Cell textAlign= 'center'>
-              <Button secondary icon onClick={() => remove(id)}>
+              <Button color="red" icon onClick={() => remove(id)}>
                 <Icon name = "delete"/>
             
               </Button>
