@@ -1,6 +1,7 @@
 import React from 'react';
 import Contacts from "./Contacts"
 import { Container, Header, Button, Icon, Divider } from "semantic-ui-react"
+import ContactForm from "./ContactForm"
 
 
 class App extends React.Component{
@@ -15,11 +16,13 @@ class App extends React.Component{
   
   render(){
     return(
-      <Container textAlign="center">
+      <Container style  = {{paddingTop: "25px"}}textAlign="center">
         <Header as ="h1" textAlign='center'>
         <Icon name = "address book outline"color = "black"circular/>
         </Header>
         <Header as="h1" color = "red"> React Contact List</Header>
+        <Divider/>
+        <ContactForm/>
         <Divider/>
         <Contacts contactList={this.state.contacts} />
         <Button primary>Button</Button>
