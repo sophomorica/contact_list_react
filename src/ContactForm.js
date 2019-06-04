@@ -4,12 +4,19 @@ import {Form} from "semantic-ui-react"
 class ContactForm extends React.Component{
   state = { name: "", phone: "", };
 
-  handleChange= ({name, value}) => { //arrow function, you don't have to bind
-    this.setState({ [name]: [value] })
+  handleChange= (e) => { //arrow function, you don't have to bind
+  this.setState({ [e.target.name]: [e.target.value] })
+    //this.setState({ [name]: [value] })
   
   }
-  handleSubmit= () =>{
-    debugger
+  handleSubmit= (e) =>{
+    //semantic forms automatically refreshing
+    e.preventDefault()
+    // Call a function to add contact to state
+    // you can only update state in a component where state is actually defined.  
+    // we created the addContact function that gets passed into the form in the App.js
+     this.props.add(this.state);
+     this.setState({name: "", phone: ""})
   }
   
   render(){

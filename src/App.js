@@ -7,12 +7,18 @@ import ContactForm from "./ContactForm"
 class App extends React.Component{
     state = {
       contacts: [
-        {id: 1, firstName: "Jerry", phone: "801-234-3243"},
-        {id: 2, firstName: "Tom", phone: "801-745-3263"},
-        {id: 3, firstName: "Marry", phone: "801-339-9734"},
+        {id: 1, name: "Jerry", phone: "801-234-3243"},
+        {id: 2, name: "Tom", phone: "801-745-3263"},
+        {id: 3, name: "Marry", phone: "801-339-9734"},
       ]
     };
-  
+    getId = () => {
+      return Math.floor((1 + Math.random())*1000)
+    }
+  addContact = (contactData) =>{
+    let contact = { id: this.getId,...contactData, }
+    this.setState({contacts: [...this.state.contacts, contact]})
+  }
   
   render(){
     return(
@@ -22,7 +28,7 @@ class App extends React.Component{
         </Header>
         <Header as="h1" color = "blue"> React Contact List</Header>
         <Divider/>
-        <ContactForm/>
+        <ContactForm add={this.addContact}/>
         <Divider/>
         <Contacts contactList={this.state.contacts} />
       </Container>
