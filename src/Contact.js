@@ -8,7 +8,8 @@ const Contact = ({firstName, phone,}) =>(
             <Table.Cell textAlign='center'>{phone}</Table.Cell>
             <Table.Cell textAlign= 'center'>
               <Button secondary >
-                <Icon name = "trash"/>
+                <Icon name = "delete"/>
+            
               </Button>
             </Table.Cell>
           </Table.Row> 

@@ -4,22 +4,17 @@ import {Form} from "semantic-ui-react"
 class ContactForm extends React.Component{
   state = { name: "", phone: "", };
 
-  handleChange= (e) => { //arrow function, you don't have to bind
-    this.setState({ [e.target.name]: [e.target.value] })
-    // switch(e.target){
-    //   case "name":
-    //     this.setState({ name: e.target.value})
-    //     break;
-    //   case "phone":
-    //     this.setState({phone: e.target.value})
-    //   break;
-      
-    // }
+  handleChange= ({name, value}) => { //arrow function, you don't have to bind
+    this.setState({ [name]: [value] })
+  
+  }
+  handleSubmit= () =>{
+    debugger
   }
   
   render(){
     return(
-      <Form>
+      <Form onSubmit={this.handleSubmit}>
         <Form.Group widths="equal">
           <Form.Input
           fluid

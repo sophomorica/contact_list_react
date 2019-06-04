@@ -20,7 +20,7 @@ class App extends React.Component{
         <Header as ="h1" textAlign='center'>
         <Icon name = "address book outline"color = "black"circular/>
         </Header>
-        <Header as="h1" color = "red"> React Contact List</Header>
+        <Header as="h1" color = "blue"> React Contact List</Header>
         <Divider/>
         <ContactForm/>
         <Divider/>
