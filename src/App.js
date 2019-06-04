@@ -25,7 +25,6 @@ class App extends React.Component{
         <ContactForm/>
         <Divider/>
         <Contacts contactList={this.state.contacts} />
-        <Button primary>Button</Button>
       </Container>
     )
   }

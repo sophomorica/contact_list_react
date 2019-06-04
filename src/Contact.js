@@ -7,7 +7,7 @@ const Contact = ({firstName, phone,}) =>(
             <Table.Cell>{firstName}</Table.Cell>
             <Table.Cell textAlign='center'>{phone}</Table.Cell>
             <Table.Cell textAlign= 'center'>
-              <Button color="blue" >
+              <Button secondary >
                 <Icon name = "lemon"/>
                 Delete
               </Button>
