@@ -1,13 +1,13 @@
 import React from "react"
 import { Button, Table, Icon} from "semantic-ui-react"
 
-const Contact = ({name, phone,}) =>(
+const Contact = ({id, name, phone,remove, }) =>(
 
 <Table.Row>
             <Table.Cell>{name}</Table.Cell>
             <Table.Cell textAlign='center'>{phone}</Table.Cell>
             <Table.Cell textAlign= 'center'>
-              <Button secondary >
+              <Button secondary icon onClick={() => remove(id)}>
                 <Icon name = "delete"/>
             
               </Button>

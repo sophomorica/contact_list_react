@@ -19,6 +19,13 @@ class App extends React.Component{
     let contact = { id: this.getId,...contactData, }
     this.setState({contacts: [...this.state.contacts, contact]})
   }
+  removeContact = (id) =>{
+    const contacts = this.state.contacts.filter(contact => {
+      if (contact.id !== id)
+      return contact;
+    })
+    this.setState({contacts,})
+  }
   
   render(){
     return(
@@ -30,7 +37,9 @@ class App extends React.Component{
         <Divider/>
         <ContactForm add={this.addContact}/>
         <Divider/>
-        <Contacts contactList={this.state.contacts} />
+        <Contacts 
+        contactList={this.state.contacts} 
+        remove={this.removeContact} />
       </Container>
     )
   }
